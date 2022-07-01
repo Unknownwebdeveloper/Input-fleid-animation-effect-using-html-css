@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Input animation </title>
+    <style>
+        body {
+            background-color: #242329;
+            margin-top: 200px;
+            font-family: fantasy;
+            color: #fff;
+            margin-left: 200px;
+        }
+
+        .Input {
+            position: relative;
+            background: #242329;
+            display: flex;
+            justify-items: center;
+            align-items: center;
+        }
+
+        .input {
+
+            border: none;
+            padding: 10px;
+            border-radius: 4px;
+            background-color: transparent;
+            color: #fff;
+            outline: 1px solid #d1c5fc;
+        }
+
+        .input-text {
+            position: absolute;
+            top: 0;
+            left: 0;
+            transform: translate(10px, 10px);
+            cursor: pointer;
+            transition: transform 0.35s;
+        }
+
+        .input:focus+.input-text,
+        .input:valid+.input-text {
+            transform: translate(10px, -14px) scale(0.9);
+            color: #d1c5fc;
+            padding-inline: 5px;
+            background-color: #242329;
+
+        }
+
+        .input:is(:focus, :valid) {
+            outline-color: #d1c5fc;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="Input">
+        <input type="text" id="name" required class="input">
+        <label for="name" class="input-text">Phone Number</label>
+    </div>
+</body>
+
+</html>
